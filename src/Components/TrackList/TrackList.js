@@ -4,7 +4,14 @@ import Track from '../Track/Track';
 
 class TrackList extends React.Component {
   render() {
-    return <div className='TrackList'>{/* return a mapping of tracks */}</div>;
+    return (
+      <div className='TrackList'>
+        {this.props.track &&
+          this.props.tracks.map((track) => {
+            return <Track track={track} />;
+          })}
+      </div>
+    );
   }
 }
 
