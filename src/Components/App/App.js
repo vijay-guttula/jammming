@@ -23,7 +23,6 @@ class App extends React.Component {
         { name: '2name', artist: '2artist', album: '2album', id: 2 },
         { name: '3name', artist: '3artist', album: '3album', id: 3 },
         { name: '6name', artist: '6artist', album: '6album', id: 6 },
-        [uri],
       ],
     };
 
@@ -31,6 +30,7 @@ class App extends React.Component {
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
     this.savePlaylist = this.savePlaylist.bind(this);
+    this.search = this.search.bind(this);
   }
 
   addTrack(track) {
@@ -54,7 +54,14 @@ class App extends React.Component {
   }
 
   savePlaylist() {
-    const trackURIs = this.state.playlistTracks.map((track) => track.uri);
+    alert('Save playlist done');
+    const trackUris = this.state.playlistTracks.map((track) => {
+      return track.uri;
+    });
+  }
+
+  search(term) {
+    console.log(term);
   }
 
   render() {
@@ -64,7 +71,7 @@ class App extends React.Component {
           Ja<span className='highlight'>mmm</span>ing
         </h1>
         <div className='App'>
-          <SearchBar />
+          <SearchBar onSearch={this.search} />
           <div className='App-playlist'>
             <SearchResults
               searchResults={this.state.searchResults}
