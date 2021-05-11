@@ -9,16 +9,24 @@ html {
 }
 
 h1 {
-  padding: 0.77rem 0;
-  background-color: #010c3f;
+  position: fixed;
+  width: 90%;
+  z-index: 9;
+  margin: 40px;
+  padding: 0.7rem;
+  background-color: rgb(246, 246, 217);
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.88rem;
-  color: #fff;
+  font-family: 'Monaco', monospace;
+  font-size: 4.5rem;
+  color: rgb(32, 165, 165);
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 15px;
 }
 
 h1 .highlight {
-  color: #6c41ec;
+  color: rgb(29, 70, 83);
+  font-family: 'Monaco', monospace;
 }
 
 h2 {
@@ -33,12 +41,14 @@ h2 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
   color: #fff;
 }
 
 .App-playlist {
+  filter: blur(0px);
   display: flex;
   justify-content: space-between;
   width: 100%;
