@@ -46,12 +46,22 @@ class App extends React.Component {
 
   savePlaylist() {
     const trackUris = this.state.playlistTracks.map((track) => track.uri);
-    Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
-      this.setState({
-        playlistName: 'New Playlist',
-        playlistTracks: [],
-      });
-    });
+
+    try {
+      if (trackUris.length) {
+        Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
+          this.setState({
+            playlistName: 'New Playlist',
+            playlistTracks: [],
+          });
+        });
+        alert('Playlist saved!');
+        return;
+      }
+      throw new Error();
+    } catch (e) {
+      alert('Add songs to save.');
+    }
   }
 
   search(term) {
@@ -66,26 +76,28 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>
-          Ja<span className='highlight'>mmm</span>ing
-        </h1>
-        <div className='App'>
+      <div className='container'>
+        <header>
+          <h1>
+            Ja<span className='highlight'>mmm</span>ing
+          </h1>
+        </header>
+        <article>
           <SearchBar onSearch={this.search} />
-          <div className='App-playlist'>
-            <SearchResults
-              searchResults={this.state.searchResults}
-              onAdd={this.addTrack}
-            />
-            <Playlist
-              playlistName={this.state.playlistName}
-              playlistTracks={this.state.playlistTracks}
-              onRemove={this.removeTrack}
-              onNameChange={this.updatePlaylistName}
-              onSave={this.savePlaylist}
-            />
-          </div>
-        </div>
+        </article>
+        <section>
+          <SearchResults
+            searchResults={this.state.searchResults}
+            onAdd={this.addTrack}
+          />
+          <Playlist
+            playlistName={this.state.playlistName}
+            playlistTracks={this.state.playlistTracks}
+            onRemove={this.removeTrack}
+            onNameChange={this.updatePlaylistName}
+            onSave={this.savePlaylist}
+          />
+        </section>
       </div>
     );
   }

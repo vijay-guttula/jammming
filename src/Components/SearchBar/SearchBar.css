@@ -2,13 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 6rem;
-  margin-bottom: 6rem;
+  width: 200%;
 }
 
 .SearchBar input {
   margin-top: 100px;
-  width: 100%;
+  width: 95%;
   padding: 0.88rem 0;
   border: 1px solid #fff;
   border-radius: 3px;
@@ -37,8 +36,10 @@
   color: #fff;
   border: 0px;
   font-size: 0.8rem;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 2px;
   transition: background-color 0.25s;
-  font-weight: 500;
+  font-weight: bolder;
 }
 
 .SearchButton:hover {
@@ -47,4 +48,10 @@
 
 .SearchButton:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 1420px) {
+  .SearchBar input {
+    width: span;
+  }
 }

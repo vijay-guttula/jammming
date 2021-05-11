@@ -1,12 +1,14 @@
 .SearchResults {
-  width: 50%;
+  width: 45%;
   height: 900px;
   overflow-y: scroll;
   padding: 0.88rem;
   background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 2px 2px #000000;
+  backdrop-filter: blur(4px);
 }
 .SearchResults h2 {
+  color: white;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
@@ -20,9 +22,9 @@
   background: transparent;
 }
 
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1220px) {
   .SearchResults {
-    width: 90%;
+    width: 100%;
     margin-bottom: 2rem;
   }
 }
