@@ -12,19 +12,9 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      searchResults: [
-        { name: '1name', artist: '1_artist', album: '1_album', id: 1 },
-        { name: '2name', artist: '2artist', album: '2_album', id: 2 },
-        { name: '3name', artist: '3artist', album: '3_album', id: 3 },
-        { name: '4name', artist: '4artist', album: '4_album', id: 4 },
-      ],
+      searchResults: [],
       playlistName: 'Main',
-      playlistTracks: [
-        { name: '1name', artist: '1artist', album: '1album', id: 1 },
-        { name: '2name', artist: '2artist', album: '2album', id: 2 },
-        { name: '3name', artist: '3artist', album: '3album', id: 3 },
-        { name: '6name', artist: '6artist', album: '6album', id: 6 },
-      ],
+      playlistTracks: [],
     };
 
     this.addTrack = this.addTrack.bind(this);
@@ -55,9 +45,12 @@ class App extends React.Component {
   }
 
   savePlaylist() {
-    alert('Save playlist done');
-    const trackUris = this.state.playlistTracks.map((track) => {
-      return track.uri;
+    const trackUris = this.state.playlistTracks.map((track) => track.uri);
+    Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
+      this.setState({
+        playlistName: 'New Playlist',
+        playlistTracks: [],
+      });
     });
   }
 
