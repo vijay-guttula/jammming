@@ -56,8 +56,14 @@
   background: transparent;
 }
 
-@media only screen and (max-width: 1220px) {
+@media only screen and (max-width: 768px) and (min-width: 425px) {
   .Playlist {
-    width: 100%;
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .Playlist {
+    width: 300px;
   }
 }

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200%;
+  width: 100%;
 }
 
 .SearchBar input {
@@ -50,8 +50,23 @@
   outline: none;
 }
 
-@media only screen and (max-width: 1420px) {
+@media only screen and (max-width: 768px) {
+  .SearchBar {
+    width: 768px;
+  }
   .SearchBar input {
-    width: span;
+    width: 150%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .SearchBar {
+    width: 425px;
+    height: 50px;
+  }
+
+  .SearchBar input {
+    margin-top: 30px;
+    width: 400px;
   }
 }
