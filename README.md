@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Jammming
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is based React and Using spotify web-api Implicit Grant authorization flow, user authentication is done as soon as the user searches and then the user can search songs and add them into their playlists and save them.
+
+### What can be done more
+
+> Preview of songs
+> Seperate button for login
+> A loading screen while playlist is saving
+> ......
 
 ## Available Scripts
 
@@ -30,3 +37,5 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+##### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
