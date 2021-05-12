@@ -4,10 +4,7 @@ This project is based React and Using spotify web-api Implicit Grant authorizati
 
 ### What can be done more
 
-> Preview of songs
-> Seperate button for login
-> A loading screen while playlist is saving
-> ......
+> Preview of songs, Seperate button for login, A loading screen while playlist is saving, .......
 
 ## Available Scripts
 
