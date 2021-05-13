@@ -2,9 +2,11 @@
 
 This project is based React and Using spotify web-api Implicit Grant authorization flow, user authentication is done as soon as the user searches and then the user can search songs and add them into their playlists and save them.
 
-### What can be done more
-
-> Preview of songs, Seperate button for login, A loading screen while playlist is saving, .......
+> ### What more can be done
+>
+> - Preview of songs
+> - Seperate button for login
+> - A loading screen while playlist is saving
 
 ## Available Scripts
 
@@ -18,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-> Please change the redirect uri in util/Spotify.js to localhost:3000 for it to work during local development.
+> ### Please change the `redirect uri` in `util/Spotify.js` to `http://localhost:3000` for it to work during local development.
 
 ### `npm test`
 
